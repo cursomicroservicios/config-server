@@ -1,0 +1,28 @@
+server:
+  port: ${CUSTOM.SERVER.PORT:9000}
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/cursomicroservicios/config-server-files.git
+          username: dhurrego
+          password: ${GITHUB_TOKEN}
+          default-label: develop
+
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 15
+    lease-expiration-duration-in-seconds: 30
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA.SERVER.HOSTNAME:http://localhost:8761/eureka/}
+    register-with-eureka: true
+    fetch-registry: true
+    healthcheck:
+      enabled: true
+    refresh:
+      enable: true
