@@ -7,10 +7,14 @@ spring:
       server:
         git:
           uri: https://github.com/cursomicroservicios/config-server-files.git
-          username: dhurrego
+          username: '{cipher}074d7847d1b27edf7f1fe87142cbef8174aedd1c2f6f559c56259d1b20e0966c'
           password: ${GITHUB_TOKEN}
-          default-label: develop
+          default-label: ${GIT_BRANCH:develop}
+  profiles:
+    active: ${CONFIG.SERVER.PROFILE:dev}
 
+encrypt:
+  key: htsq446czlPuF9wEtjblGsX8EoMx8JKN
 
 eureka:
   instance:
