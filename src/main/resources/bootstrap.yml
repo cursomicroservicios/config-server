@@ -7,7 +7,7 @@ spring:
       server:
         git:
           uri: https://github.com/cursomicroservicios/config-server-files.git
-          username: '{cipher}074d7847d1b27edf7f1fe87142cbef8174aedd1c2f6f559c56259d1b20e0966c'
+          username: ${GITHUB_USERNAME:'{cipher}074d7847d1b27edf7f1fe87142cbef8174aedd1c2f6f559c56259d1b20e0966c'}
           password: ${GITHUB_TOKEN:'{ciper}asdasdasdasdasd'}
           default-label: ${GIT_BRANCH:develop}
           clone-on-start: true
