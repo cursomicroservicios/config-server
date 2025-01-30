@@ -1,4 +1,4 @@
-# DISCOVERY-SERVER
+# CONFIG-SERVER
 
 Microservicio encargado proporcionar las variables de configuración de acuerdo
 al ambiente 
