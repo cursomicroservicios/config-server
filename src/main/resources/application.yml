@@ -3,3 +3,4 @@ spring:
     name: @project.name@
     version: @project.version@
     author: Deivid Urrego
+    description: @project.description@

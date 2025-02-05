@@ -12,11 +12,14 @@ spring:
           default-label: ${GIT_BRANCH:develop}
           clone-on-start: true
           force-pull: true
+        encrypt:
+          enabled: true
   profiles:
     active: ${CONFIG.SERVER.PROFILE:dev}
 
 encrypt:
   key: ${CONFIG.SERVER.ENCRYPT.KEY:htsq446czlPuF9wEtjblGsX8EoMx8JKN}
+
 
 eureka:
   instance:
@@ -32,3 +35,18 @@ eureka:
       enabled: true
     refresh:
       enable: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info
+  info:
+    env:
+      enabled: true
+
+info:
+  name: ${spring.application.name}
+  version: ${spring.application.version}
+  author: ${spring.application.author}
+  description: ${spring.application.description}
